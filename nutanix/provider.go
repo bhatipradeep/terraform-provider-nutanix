@@ -134,6 +134,7 @@ func Provider() *schema.Provider {
 			"nutanix_recovery_plans":            dataSourceNutanixRecoveryPlans(),
 			"nutanix_address_groups":            dataSourceNutanixAddressGroups(),
 			"nutanix_address_group":             dataSourceNutanixAddressGroup(),
+			"nutanix_foundation_discover_nodes": dataSourceFoundationDiscoverNodes(),
 		},
 		ResourcesMap: map[string]*schema.Resource{
 			"nutanix_virtual_machine":         resourceNutanixVirtualMachine(),
