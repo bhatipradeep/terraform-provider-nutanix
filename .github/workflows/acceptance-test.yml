@@ -21,7 +21,7 @@ jobs:
           go-version: 1.17
       - name: Acceptance test cases
         run: |
-              args=${{ github.event.client_payload.slash_command.args.unnamed.all }}
+              args=${{ github.event.client_payload.slash_command.args }}
               providers=(${args})
               index=0
               n=${#providers[@]}
@@ -56,6 +56,7 @@ jobs:
               echo "Foundation config is ${{ secrets.FOUNDATION_CONFIG }}"
               echo $TESTARGS
               pwd
+              ls
       - name: Code Coverage Check
         run:  |
               echo "Code coverage: Checking if code coverage is above threshold..."
