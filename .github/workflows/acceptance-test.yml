@@ -21,7 +21,7 @@ jobs:
           go-version: 1.17
       - name: Acceptance test cases
         run: |
-              args=${{ github.event.client_payload.slash_command.args }}
+              args="${{ github.event.client_payload.slash_command.args }}"
               providers=(${args})
               index=0
               n=${#providers[@]}
