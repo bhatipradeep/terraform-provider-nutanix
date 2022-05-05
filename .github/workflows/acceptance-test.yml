@@ -21,6 +21,8 @@ jobs:
           go-version: 1.17
       - name: Acceptance test cases
         run: |
+              cd test_files
+              wget -O alpine.iso ${{ secrets.ALPINE }} -P test_files/
               args="${{ github.event.client_payload.slash_command.args }}"
               providers=(${args})
               index=0
