@@ -55,8 +55,7 @@ jobs:
               echo "TESTARGS = $TESTARGS "
               echo '${{ secrets.FOUNDATION_CONFIG }}' > test_foundation_config.json
               cat test_foundation_config.json
-      - name: Code Coverage Check
-        run:  |
+      - run:  |
               echo "Code coverage: Checking if code coverage is above threshold..."
               export TESTCOV_THRESHOLD=50
               echo "Threshold: $TESTCOV_THRESHOLD %"
